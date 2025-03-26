@@ -31,7 +31,7 @@
 					foreach ($teacher as $values) {
 						echo "<p>Détails : ".$values["teaFirstname"]." ".$values["teaName"]." // ". $values["teaGender"]."</p>";
 						echo "<p>Surnom : ".$values["teaNickname"]."</p>";
-						echo "<p>".$values["teaNicknameOrigin"]."</p>";
+						echo "<p>".$values["teaOrigin"]."</p>";
 						echo "<p>Section : ".$Section[0]["secName"];
 					}
 				?>

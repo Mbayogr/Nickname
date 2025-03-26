@@ -78,7 +78,7 @@
     public function getAllSections(){
 
         $query = 'SELECT * FROM t_section';
-
+        
         $req = $this->querySimpleExecute($query);
 
         $result = $this->formatData($req);
@@ -117,7 +117,7 @@
         return $result;
     }
 
-        /**
+     /**
      * fonction qui permet de définir l'information d'un seul enseignant en utilisant un formulaire.
      */
 		public function setOneTeacher($lastName, $firstName, $gender, $nickName, $nickNameOrigin){
@@ -128,6 +128,16 @@
             die();
         }
 
+          /**
+     * fonction qui permet de supprimer un enseignant.
+     */
+    public function DeleteOneTeacher($idTeacher){
+            
+        $query = "DELETE FROM t_teacher WHERE idTeacher=$idTeacher";
+        $this->querySimpleExecute($query);
+        header("Location:index.php");
+        die();
+    }
 
     // + tous les autres méthodes dont vous aurez besoin pour la suite (insertTeacher ... etc)
  }
