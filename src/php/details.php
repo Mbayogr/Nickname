@@ -1,7 +1,21 @@
 <?php 
-	/*auteur: grgeory Mabayo
-	Description: Projet fil rouger qui consiste à pouvoir chercher des infomations sur les enseigants depuis la base de données
-	*/
+		/*	auteur:	Gregory Mbayo	
+			Description: Projet fil rouger qui consiste à pouvoir chercher des infomations sur les enseigants depuis la base de données
+		*/
+	//utilise la base de donnée
+
+	session_start();
+$DATABASE_HOST = 'localhost';
+$DATABASE_USER = 'root';
+$DATABASE_PASS = 'root';
+$DATABASE_NAME = 'db_nickname_mbayogr';
+// connexion a la base de donnée
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+if ( mysqli_connect_errno() ) {
+	// affiche le message d'erreur en cas d'echec de connexion
+	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+}
+
 	include'Database.php';
 	$teacherID = $_GET['idTeacher'];
 	$database = new Database(); 
@@ -11,9 +25,10 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
+<!-- affiche les informations sur l'enseignat selectioné-->
+	
+	<head>	
 		<title>Surnom des enseignants</title>
-		<meta charset="utf-8">
 	</head>
 	<body>
 		<header>
@@ -29,17 +44,18 @@
 			<div>
 				<?php 
 					foreach ($teacher as $values) {
-						echo "<p>Détails : ".$values["teaFirstname"]." ".$values["teaName"]." // ". $values["teaGender"]."</p>";
-						echo "<p>Surnom : ".$values["teaNickname"]."</p>";
-						echo "<p>".$values["teaOrigin"]."</p>";
-						echo "<p>Section : ".$Section[0]["secName"];
+					echo "<p>Détails : ".$values["teaFirstName"]." ".$values["teaLastName"]."<p>" ;
+					echo "<p>Genre :".$values["teaGender"]."</p>";
+					echo "<p>Surnom : ".$values["teaNickName"]."</p>";
+					echo "<p>Origine :".$values["teaNickNameOrigine"]."</p>";
+					echo "<p>Section : ".$Section[0]["fkSection"];
 					}
 				?>
 			</div>
 		</main>
 		<footer>
 			<div id="bot">
-				<p class="textBot">Ce site a été créé par Gregory Mbayo<p>
+			<p class="textBot">Ce site a été créé par Gregory Mbayo<p>
 			</div>
 		</footer>
 	</body>
