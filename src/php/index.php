@@ -61,7 +61,7 @@
 						echo (
                             //liens pour acceder a la modification, supprimer un prof, les détails, pour voter et voir la liste des votes
                         '<td id="modification">
-                            <a class="aModification" href="modificationTeacher.php?idTeacher='.$teacherId.'">Modifier</a>
+                            <a class="aModification" href="updateTeacher.php?idTeacher='.$teacherId.'">Modifier</a>
                             <a class="aModification" onClick="return confirm(\'Supprimer ?\');" href="deleteTeacher.php?varDelete='.$teacherId.'">Supprimer</a>
                             <a class="aModification" href="details.php?idTeacher='.$teacherId.'">Détails</a>
                         </td>'

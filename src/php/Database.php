@@ -91,7 +91,7 @@
           /*  $query = "SELECT secName FROM t_section WHERE idSection=$result";
             $req = $this->querySimpleExecute($query);
             $result = $this->formatData($req);*/
-
+            
         }
     
      // fonction qui permet de supprimer un enseignant.
