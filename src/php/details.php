@@ -44,11 +44,12 @@ if ( mysqli_connect_errno() ) {
 			<div>
 				<?php 
 					foreach ($teacher as $values) {
-					echo "<p>Détails : ".$values["teaFirstName"]." ".$values["teaLastName"]."<p>" ;
+					echo "<p>Nom complet : ".$values["teaFirstName"]." ".$values["teaLastName"]."<p>" ;
 					echo "<p>Genre :".$values["teaGender"]."</p>";
 					echo "<p>Surnom : ".$values["teaNickName"]."</p>";
 					echo "<p>Origine :".$values["teaNickNameOrigine"]."</p>";
 					echo "<p>Section : ".$Section[0]["fkSection"];
+					//echo "<p>Section :".$Section[0]["secName"];
 					}
 				?>
 			</div>

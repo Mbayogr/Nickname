@@ -154,7 +154,7 @@ if ( mysqli_connect_errno() ) {
         }
         if($firstName != null && $lastName != null && $nickName != null && $nickNameOrigin != null && $gender !=null && $fkSection != null)
         {
-            $fkTeacher = $database->setOneTeacher($lastName, $firstName, $gender, $nickName, $nickNameOrigin);
+            $fkTeacher = $database->setOneTeacher($lastName, $firstName, $gender, $nickName, $nickNameOrigin, $fkSection);
         }
         else
         {

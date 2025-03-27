@@ -74,7 +74,7 @@
      
 		public function setOneTeacher($lastName, $firstName, $gender, $nickName, $nickNameOrigin, $fkSection){
 			
-            $query = "INSERT INTO t_teacher (teaLastName, teaFirstName, teaGender, teaNickName, teaNickNameOrigin, fkSection) VALUES ('$lastName', '$firstName', '$gender', '$nickName', '$nickNameOrigin', '$fkSection')";
+            $query = "INSERT INTO t_teacher (teaLastName, teaFirstName, teaGender, teaNickName, teaNickNameOrigine, fkSection) VALUES ('$lastName', '$firstName', '$gender', '$nickName', '$nickNameOrigin', '$fkSection')";
             $this->querySimpleExecute($query);
             return $this->connector->lastInsertId();
             die();
@@ -83,11 +83,15 @@
 
       // fonction qui permet de récupéré la section d'un enseignant.
      
-        public function getSectionOfTeacher($idTeacher){       
+        public function getSectionOfTeacher($idTeacher){        
             $query = "SELECT fkSection FROM t_teacher WHERE idTeacher=$idTeacher";
             $req = $this->querySimpleExecute($query);
             $result = $this->formatData($req);
             return $result;
+          /*  $query = "SELECT secName FROM t_section WHERE idSection=$result";
+            $req = $this->querySimpleExecute($query);
+            $result = $this->formatData($req);*/
+
         }
     
      // fonction qui permet de supprimer un enseignant.
@@ -102,7 +106,7 @@
      // fonction qui permet de modifier un enseignant.
      
         public function UpdateOneTeacher($lastName, $firstName, $gender, $nickName, $nickNameOrigin, $idTeacher, $fkSection, $vote){       
-            $query = "UPDATE `t_teacher` SET `teaLastName` = '$lastName', `teaFirstName` = '$firstName', `teaGender` = '$gender', `teaNickName` = '$nickName', `teaNickNameOrigin` = '$nickNameOrigin', `teaVote` = '$vote' WHERE `idTeacher` = '$idTeacher'";
+            $query = "UPDATE `t_teacher` SET `teaLastName` = '$lastName', `teaFirstName` = '$firstName', `teaGender` = '$gender', `teaNickName` = '$nickName', `teaNickNameOrigine` = '$nickNameOrigin' WHERE `idTeacher` = '$idTeacher'";
             $this->querySimpleExecute($query);
             $this->UpdateOneTeacherRelation($idTeacher, $fkSection);
         }    

@@ -33,40 +33,12 @@
                         }
                         else
                         {
-                          /*  echo(
-                                '<p>Connectez vous pour ajouter des enseignants ou des sections</p>'
-                            );*/
+                      
                         }
                     ?>
 				<button class="nav-button" onClick="parent.location='addTeacher.php';">Ajout d'un enseignant</button>
                 <?php
-				/*if(isset($_SESSION) && !empty($_SESSION))
-                        {
-                            echo(
-                                '
-                                    <form class="loginForm" method="post" action="logout.php">
-                                        <p>					
-                                            <label>' . $_SESSION["login"] . '</label>
-                                            <input type="submit" name="submit" value="Se deconnecter"/>
-                                        </p>
-                                    </form>
-                                '
-                            );
-                        }
-                        else 
-                        {
-                            echo(
-                                '
-                                    <form class="loginForm" method="post" action="login.php">
-                                        <p>					
-                                            <input type="text" name="login" placeholder="Login">							
-                                            <input type="password" name="pwd" placeholder="Mot de passe">
-                                            <input type="submit" name="submit" value="Se connecter"/>
-                                        </p>
-                                    </form>
-                                '
-                            );
-                        }*/
+			
                     ?>
 			</nav>		
 		</header>
