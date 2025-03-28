@@ -35,16 +35,15 @@
             <h1>Surnom des enseignants</h1>
             <nav>
                 <button class="nav-button" onClick="parent.location='index.php';">Accueil</button>
-                <button class="nav-button" onClick="parent.location='modificationTeacher.php';">Modification d'un enseignant</button>
             </nav>
         </header>
         <section>           
                 <h3>Modification d'un enseignant</h3>
                 <form id="formAddTeacher" method="post" action="#">
                     <p>
-                        <input type="radio" name="gender" value="h"<?php foreach ($teacherInfo as $info){if ($info["teaGender"]=='m'){echo 'checked="checked"';}} ?>>Homme
-                        <input type="radio" name="gender" value="f"<?php foreach ($teacherInfo as $info){if ($info["teaGender"]=='w'){echo 'checked="checked"';}} ?>>Femme
-                        <input type="radio" name="gender" value="a"<?php foreach ($teacherInfo as $info){if ($info["teaGender"]=='o'){echo 'checked="checked"';}} ?>>Autre
+                        <input type="radio" name="gender" value="m"<?php foreach ($teacherInfo as $info){if ($info["teaGender"]=='m'){echo 'checked="checked"';}} ?>>Homme
+                        <input type="radio" name="gender" value="w"<?php foreach ($teacherInfo as $info){if ($info["teaGender"]=='w'){echo 'checked="checked"';}} ?>>Femme
+                        <input type="radio" name="gender" value="o"<?php foreach ($teacherInfo as $info){if ($info["teaGender"]=='o'){echo 'checked="checked"';}} ?>>Autre
                     </p>        
                     <p>		
                         <label>Nom : </label>
@@ -60,7 +59,7 @@
                     </p>
                     <p>
                         <label>Origine : </label>
-                        <textarea id="textAreaAdd" rows="4" cols="50" name="nickNameOrigine"> <?php foreach ($teacherInfo as $info){echo $info["teaNickNameOrigine"]; } ?></textarea>
+                        <textarea id="textAreaAdd" rows="4" cols="50" name="nickNameOrigin"> <?php foreach ($teacherInfo as $info){echo $info["teaNickNameOrigine"]; } ?></textarea>
                     </p>
                     <p>
                         <select name="section">
@@ -83,7 +82,7 @@
                         </select>
                     </p>
                     <p>
-                        <input id="buttonAdd" type="submit" name="submit" value="Ajouter"/>
+                        <input id="buttonAdd" type="submit" name="submit" value="Modifier"/>
                     </p>
                 </form>
             </div>
@@ -115,7 +114,7 @@
             echo "Le format du prénom est faux <br>";
         }
 
-        if(isset($_POST["FirstName"]) && !empty($_POST["lastName"]))
+        if(isset($_POST["firstName"]) && !empty($_POST["lastName"]))
         {
             $lastName = htmlspecialchars($lastName = $_POST["lastName"]);
         }

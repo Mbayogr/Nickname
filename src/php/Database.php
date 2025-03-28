@@ -105,10 +105,10 @@
     
      // fonction qui permet de modifier un enseignant.
      
-        public function UpdateOneTeacher($lastName, $firstName, $gender, $nickName, $nickNameOrigin, $idTeacher, $fkSection, $vote){       
+        public function UpdateOneTeacher($lastName, $firstName, $gender, $nickName, $nickNameOrigin, $idTeacher, $fkSection, $vote=NULL){       
             $query = "UPDATE `t_teacher` SET `teaLastName` = '$lastName', `teaFirstName` = '$firstName', `teaGender` = '$gender', `teaNickName` = '$nickName', `teaNickNameOrigine` = '$nickNameOrigin' WHERE `idTeacher` = '$idTeacher'";
             $this->querySimpleExecute($query);
-            $this->UpdateOneTeacherRelation($idTeacher, $fkSection);
+           // $this->UpdateOneTeacherRelation($idTeacher, $fkSection);
         }    
     
  }
