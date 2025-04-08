@@ -3,6 +3,7 @@
  * Auteur : Gregory Mbayo
  * Description : Cette page va s'occuper d'effectuer les requettes d'extraction de la base de données.
  */
+include'config.php';
  class Database {
     // Variable de classe
     private $connector;
@@ -10,7 +11,7 @@
      // Cette fonction permet de se connecter en passant par un pdo à la base de donnée
      
     public function __construct(){
-        $this->connector = new PDO('mysql:host=localhost;dbname=db_nickname_mbayogr;charset=utf8' , 'root', 'root');
+        $this->connector = new PDO( SERVNAME , USENAME, PASSWORD);
     }
     
       //Cette fonction permet de préparer l'execution d'une requête
