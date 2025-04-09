@@ -1,2 +1,5 @@
 # Ignorer tous les fichiers .log
 *.log
+
+# ignore ALL files in ANY directory named conf
+conf/ 
