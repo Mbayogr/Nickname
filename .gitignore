@@ -1,5 +1,5 @@
 # Ignorer tous les fichiers .log
 *.log
 
-# ignore ALL files in ANY directory named conf
+# ignore le fichier nommé config.php
 name[config].php

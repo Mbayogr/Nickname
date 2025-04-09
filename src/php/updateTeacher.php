@@ -6,6 +6,7 @@
     include'Database.php';
     $database = new Database();
 
+    
     if (isset($_GET) && !empty($_GET)) {
         
         if (isset($_GET["idTeacher"]) && !empty($_GET["idTeacher"])) {

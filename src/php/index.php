@@ -7,7 +7,6 @@
 	$database = new Database(); 
 	$teachers = $database->getAllTeachers();
  ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 	<head>	

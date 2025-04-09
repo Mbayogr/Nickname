@@ -15,7 +15,6 @@ if ( mysqli_connect_errno() ) {
 	// affiche le message d'erreur en cas d'echec de connexion
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
-
 	include'Database.php';
 	$teacherID = $_GET['idTeacher'];
 	$database = new Database(); 
