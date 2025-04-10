@@ -3,3 +3,6 @@
 
 # ignore le fichier nommé config.php
 name[config].php
+
+# Ignorer tous les fichiers .temp
+*.temp
